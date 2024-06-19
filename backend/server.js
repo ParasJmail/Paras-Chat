@@ -1,7 +1,10 @@
-const app = require("./app");
+onst app = require("./app");
 const { connectDatabase } = require("./config/database");
 const cloudinary = require("cloudinary");
-connectDatabase();
+
+
+connectDatabase(process.env.MONGO_URI);
+
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
